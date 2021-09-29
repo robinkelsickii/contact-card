@@ -1,19 +1,19 @@
-var time = document.getElementById('time'); 
+var time = document.getElementById('time');
 
-function currentTime(){
+function currentTime() {
     let clock = new Date;
 
-    let hours = clock.getHours();
-    let minutes = clock.getMinutes(); 
+    let hours = doubleDigits(clock.getHours());
+    let minutes = doubleDigits(clock.getMinutes());
 
     time.innerHTML = `${hours} : ${minutes}`
 }
 
-function doubleDigits(time) {
-    if (time < 10) {
-        return '0' + time;
+function doubleDigits(clock) {
+    if (clock < 10) {
+        return '0' + clock;
     }
-    return time;
+    return clock;
 }
 
-setInterval(currentTime, 1000); 
+setInterval(currentTime, 1000);
